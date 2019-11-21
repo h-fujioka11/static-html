@@ -1,0 +1,29 @@
+.p-footer {
+  width: 100%;
+  padding: 50px 0;
+  color: $color-gray-f1;
+  background: $color-gray-3;
+  
+  &__inner {
+    width: 90%;
+    @include center;
+    @include flex-between;
+    
+    text-align: center;
+    
+    @include respond(pc) {
+      width: $lg-device-width;
+    }
+    
+    .inner_nav {
+      //display: flex;
+      display: none;
+      
+      a {
+        color: $color-gray-f1;
+        @include fts(12);
+        padding-right: 20px;
+      }
+    }
+  }
+}

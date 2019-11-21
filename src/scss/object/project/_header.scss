@@ -1,0 +1,43 @@
+.p-header {
+  width: 100%;
+  @include flex-between;
+  align-items: center;
+  height: 120px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  @include css3(transition, .4s);
+  
+  .c-logo {
+    width: 290px;
+    @include css3(transition, .4s);
+  }
+
+  &.is-transform {
+    @include gradation_main;
+    height: 50px;
+    
+    .c-logo {
+      width: 130px;
+    }
+  }
+  @include respond(sp) {
+    display: none;
+  }
+}
+
+.p-header-sp {
+  display: none;
+  position: absolute;
+  z-index: 4;
+  top: 10px;
+  left: 5%;
+  @include respond(sp) {
+    display: block;
+  }
+  .c-logo {
+    width:50px;
+  }
+}

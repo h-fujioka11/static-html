@@ -1,0 +1,61 @@
+.c-btn {
+  width: 100%;
+  display: block;
+  color: $primarycolor;
+  border: 1px solid $primarycolor;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  @include css3(transition, .4s);
+  text-align: left;
+  @include fts(24);
+  @include futura-demi;
+  line-height: 8rem;
+  padding-left: 30px;
+
+  svg {
+    width: 20px;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    margin-top: -7px;
+    fill: $primarycolor;
+    stroke: $primarycolor;
+  }
+
+  &:hover {
+    background: $primarycolor;
+    color: #fff;
+    
+    svg {
+      fill: #fff;
+      stroke: #fff;
+    }
+  }
+}
+
+.c-btn--secondary {
+  @extend .c-btn;
+  border: 1px solid $secondarycolor;
+  color: $secondarycolor;
+
+  svg {
+    width: 20px;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    margin-top: -7px;
+    fill: $secondarycolor;
+    stroke: $secondarycolor;
+  }
+
+  &:hover {
+    background: $secondarycolor;
+    color: #fff;
+    
+    svg {
+      fill: #fff;
+      stroke: #fff;
+    }
+  }
+}

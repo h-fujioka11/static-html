@@ -1,0 +1,10 @@
+.js-contents {
+    opacity: 0;
+    transform: translate(0, 100px);
+    transition: all .6s;
+    
+    &.is-fadein {
+      opacity: 1;
+      transform : translate(0, 0);
+    }
+}

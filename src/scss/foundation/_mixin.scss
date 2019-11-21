@@ -1,0 +1,96 @@
+//claerfix
+@mixin cf() {
+  *zoom: 1;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//センター配置
+@mixin center() {
+  margin-right: auto;
+  margin-left: auto;
+}
+//センター配置
+@mixin flex-between() {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+}
+
+  
+@mixin fts($fts, $lin: 24) {
+  $rem: $fts / 10;
+  $linS: $lin / $fts;
+  font-size: #{$fts}px;
+  font-size: #{$rem}rem;
+  line-height: $linS;
+}
+
+// Responsive Mixins
+@mixin respond($media) {
+  @if $media == sp {
+    @media print, screen and (max-width: $sm-device-width - 1) { @content; }
+  }
+  @else if $media == md {
+    @media print, screen and (min-width: $sm-device-width) and (max-width: $lg-device-width - 1) { @content; }
+  }
+
+  @else if $media == pc {
+    @media print, screen and (min-width: $lg-device-width) { @content; }
+  }
+  @else {
+    @media print, screen and ('#{$media}') { @content; }
+  }
+}
+
+@mixin transition-opacity() {
+  @include css3(transition, 0.2s);
+    &:hover {
+      opacity: .6;
+    }
+}
+
+@mixin transition-background-color($color) {
+  @include css3(transition, 0.4s);
+    &:hover {
+      background: $color;
+      color: #fff;
+    }
+}
+
+@mixin transition-text-color($color) {
+  @include css3(transition, 0.2s);
+    &:hover {
+      color: $color;
+    }
+}
+@mixin gradation_main() {
+  background: linear-gradient(180deg, #FF2253 0%, #FF4B4B 100%, #FF4B4B 100%), #FC5E22;
+}
+@mixin gradation_secodary() {
+  background: linear-gradient(180deg, #3E1CC4 0%, #803FD2 100%);
+}
+@mixin futura-bold () {
+  font-family: futura-pt-bold, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+@mixin futura-demi () {
+  font-family: futura-pt, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+@mixin futura-normal () {
+  font-family: futura-pt, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
